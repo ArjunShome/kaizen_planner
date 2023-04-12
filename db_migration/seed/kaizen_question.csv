@@ -1,0 +1,29 @@
+id,question,reference_table,reference_table_column,question_type,question_stage,sort_order
+d00c332c-5684-4f9e-b8d8-f22aa856d587,Where did this idea originate from,kaizen,source,proactive,Planning,1
+cd317399-6d94-4c81-b8f2-c6f4c56e8905,Provide a descriptive heading or caption to your Kaizen,kaizen,title,proactive,Planning,2
+96ed6caa-db58-44f1-b08e-7d0ca924084c,Who is the Kaizen owner,kaizen,owner,proactive,Planning,3
+782e76b8-f557-47aa-93e3-1e97a7efa4c2,Who are the team members,kaizen,team_members,proactive,Planning,4
+48089a90-1cad-4eae-9548-16037e8d684c,Name of the project for which Kaizen is performed,kaizen,project_name,proactive,Planning,5
+bd02cec7-5a8d-4280-990b-ea39e324698a,Name of the department under the project,kaizen,department_name,proactive,Planning,6
+0e7cc3aa-3181-4c54-b23f-2b211df20eb4,Select the start date from which this kaizen was planned,kaizen,start_date,proactive,Planning,7
+d0b2efb1-c337-4ef6-bd12-f6be22a46c6f,Select the end date on which this kaizen was implemented and executed ,kaizen,end_date,proactive,Planning,8
+f37fb1db-5060-4ac6-a8a9-51c92b38eb55,What is your improvement or problem statement? Make sure your answer describes what when and why,kaizen,problem_statement,proactive,Planning,9
+69763217-d0d7-4455-817f-c22184738a50,What is your primary parameter that you wish to work on ,kaizen_performance_parameter,parameter_description,proactive,Planning,10
+375b043f-b681-44aa-9ce2-12a2c044ba0d,What is your secondary parameter that you wish to work on ,kaizen_performance_parameter,parameter_description,proactive,Planning,11
+c6be96aa-05f0-4acf-8dbe-c5652f8da936,Is there any negatively impacted parameters in this process ,kaizen_performance_parameter,parameter_description,proactive,Planning,12
+39fbcdff-6c39-4c3d-867a-6f3dfcd6ef8d,What tools and techniques have you used for analysis and solution to determine aspects of improvement and improvement actions,kaizen_analysis,response,proactive,Analysis,13
+8aee5491-a6bd-4d8d-9bfe-004779154de0,Mention the aspect that you ned to work upon to bring the improvement,kaizen_development_solution,aspect,proactive,Implementing,14
+830c9f70-1c3f-4c6d-ba74-f9206169b22b,Mention the improvement action would you take to improve the aspect given. Improvement action may result in one or more task to be implemented,kaizen_implementation_plan,improvement_action,proactive,Implementing,15
+67669b77-8d7c-4564-8e51-84de4e899ccf,For a given improvement task above what is your solution task? The solution needs to be identified for implementation and recorded here. Improvement action may result in one or more tasks to be implemented,kaizen_implementation_plan,improvement_solution,proactive,Implementing,16
+73cf5263-dd68-4c88-b8be-578d00e6ab19,Write the name of the person responsible for implementing the task,kaizen_development_solution,improvement_action_owner,proactive,Implementing,17
+8ea328aa-add4-4862-a1b3-04fcd28210cf,What is the actual implemented date?,kaizen_development_solution,actual_implemented_date,proactive,Implementing,18
+5e172db4-1f40-4566-801f-e6186de08298,What was the actual achievement vs target planned in planning stage?,kaizen_development_solution,achievement,proactive,Implementing,19
+e47f995b-89e0-4316-8087-4da12e576464,Provide the outcome of your planned improvement solution task,kaizen_development_solution,improvement_outcome,proactive,Implementing,20
+18a829f4-082a-4fda-af54-e29e26bca39f,What did you do differently?,kaizen_key_outcome,outcome,proactive,Implementing,21
+548e70da-4540-44cc-a027-792961275d30,What were the lessons learnt? how did you benefit from the improvement?,kaizen_key_outcome,outcome,proactive,Implementing,22
+ae3fc743-93bd-4df9-ab95-bfeeb1384c44,How did your client benefit from the improvement?,kaizen_key_outcome,outcome,proactive,Implementing,23
+0335b60f-cdaf-497e-a4fb-da60f0815b6b,How did your team/organization benefit from the improvement?,kaizen_key_outcome,outcome,proactive,Implementing,24
+77bf5c72-bf23-4eb5-9843-f6abf4bbee8e,Were you able to apply the improvement?,kaizen_key_outcome,outcome,proactive,Implementing,25
+c20fe425-8ed6-446a-adfe-093ec21c21fe,Did you do anything more than what you had planned?,kaizen_key_outcome,outcome,proactive,Implementing,26
+85335b55-dd4e-45d7-a152-3e7cbdcceba6,What were the key differentiators?,kaizen_key_outcome,outcome,proactive,Implementing,27
+24b9bbf2-8c2c-4cf7-aae2-d69370d7e9db,What are the take aways?,kaizen_key_outcome,outcome,proactive,Implementing,28

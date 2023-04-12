@@ -1,0 +1,80 @@
+ List of APIs for Kaizen Planner :-
+
+PRIMARY APIS :-
+
+1. Apply Kaizen --Done
+    Inputs:-
+    userid, kaizen_type
+    Operations:-
+    Kaizen table gets populated with a new record of the user and the chosen kaizen type.
+
+2. Record Kaizen Question Response
+    Inputs:-
+    {
+        kaizen_id
+        responses:
+            [
+                {
+                  question_id : uuid,
+                  response_str : str,
+                  performance_param_metric: optional
+                    {
+                        metric: optional(kaizen_performance_metric enum),
+                        performance_before: optional(str),
+                        performance_target: optional(str),
+                        performance_after: optional(str)
+                    },
+                  kaizen_outcome: optional
+                    {
+                        outcome_type: optional(kaizen_outcome_type enum)
+                    },
+                  kaizen_implementation: optional
+                    {
+                        target_date: optional(date),
+                        actual_date: optional(date),
+                        improvement_action: optional(str),
+                        improvement_solution: optional(str)
+                    }
+                }
+            ]
+    }
+
+3. Record kaizen Analysis Questions response
+    Inputs:-
+    {
+        kaizen_id : uuid,
+        analysis_response:
+        [
+            {
+                analysis_question_id: uuid,
+                response: str
+            }
+        ]
+    }
+
+
+SECONDARY APIS :-
+
+1. get kaizen questions --Done
+    Inputs:- kaizentype, question stage (optional)
+    operations:- get list of all the kaizen questions for the kaizen type and question stage spoecified
+
+2. get kaizen analysis questions --Done
+    Inputs:- analysis type
+    operations:- get the the list of all kaizen analysis question based upon analysis type chosen
+
+3. get kaizen parameter type
+    oeprations:- get the parameter types for a kaizen.
+
+4. get kaizen performance mertric
+    operations:- get the performance metrics for a kaizen
+
+5. get kaizen types
+    operations:- get different kaizen types.
+
+6. get kaizen source
+    operations:- get different kaizen sources.
+
+7. get kaizen outcome types
+    operations:- get different kaizen outcome types
+

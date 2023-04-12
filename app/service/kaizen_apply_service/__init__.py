@@ -1,0 +1,1 @@
+from app.service.kaizen_apply_service.kaizen_apply_service import KaizenApplyService

@@ -1,0 +1,207 @@
+Project kaizen_planner {
+    database_type: 'PostgreSQL'
+    Note: 'Database design for Kaizen Tracker Application'
+}
+
+Enum kaizen_question_segment {
+    kaizen
+    kaizen_performance_parameter
+    kaizen_development_solution
+    kaizen_implementation_plan
+    kaizen_key_outcome
+}
+
+Enum kaizen_type {
+    proactive
+    reactive
+    innovative
+}
+
+Enum kaizen_source {
+    client_requirement
+    self_implemented
+}
+
+Enum kaizen_status {
+    in_progress
+    completed
+}
+
+Enum kaizen_parameter_type {
+    Primary
+    Secondary
+}
+
+Enum kaizen_analysis_type {
+    how_how
+    brainstorming
+    value_stream_mapping
+    5_why_analysis
+    4M_method
+    cause_affect_analysis
+
+}
+
+Enum kaizen_outcome_type {
+    success_item
+    failure_item
+    future_improvement
+    personal_benefit
+    team_benefit
+    organization_benefit
+    client_benefit
+    take_aways
+}
+
+Enum kaizen_performance_metric {
+    time
+    cost
+    quality
+}
+
+
+//schema - info
+Table kaizen_question as ktq [note: 'schema - info']{
+    id uuid [pk]
+    question varchar [note: '256 chars']  
+    refference_table kaizen_question_segment [not null, note: 'varchar - 50 chars. Value from kaizen_question_segment enum.']
+    refference_table_column varchar [note: '128 chars']
+    question_type kaizen_type [not null, note: 'varchar - 50 chars. Value from kaizen_type enum.']
+    question_stage varchar [note: '32 chars']
+    sort_order int [not null]
+    question_meta jsonb
+
+    Indexes {
+        question [name:'idx_kaizen_question_question']
+    }  
+}
+
+//schema - info
+Table kaizen_analysis_question as kaq [note: 'schema - info']{
+    id uuid [pk]
+    question varchar [not null, note: '256 chars']
+    analysis_type kaizen_analysis_type [not null, note: 'varchar - 30 chars. Value from kaizen_analysis_type enum.']
+    created_by varchar [not null, note: '256 chars']
+    modified_on datetime [not null, default: `now()`]
+    modified_by varchar [not null, note: '256 chars']
+
+    Indexes {
+        analysis_type [name:'idx_kaizen_analysis_question_analysis_type']
+    }
+}
+    
+//schema - response
+Table kaizen as k [note: 'schema - response']{
+    id uuid [pk]
+    user_id uuid [not null]
+    kaizen_type kaizen_type [not null, note: 'varchar - 50 chars. Value from kaizen_type enum.']
+    title varchar [not null, note: '256 chars']
+    problem_statement varchar [not null, note: '512 chars']
+    status kaizen_status [not null, note: 'varchar - 50 chars. Value from kaizen_status enum.']
+    source kaizen_source [not null, note: 'varchar - 30 chars. Value from kaizen_source enum.']
+    owner varchar [not null, note: '256 chars']
+    team_members varchar[] [not null, note: '256 chars']
+    department_name varchar [not null, note: '256 chars']
+    project_name varchar [not null, note: '256 chars']
+    kaizen_start_date datetime [not null]
+    kaizen_end_date datetime [not null]
+    created_on datetime [not null, default: `now()`]
+    created_by varchar [not null, note: '256 chars']
+    modified_on datetime [not null, default: `now()`]
+    modified_by varchar [not null, note: '256 chars']
+}
+
+//schema - response
+Table kaizen_performance_parameter as kp [note: 'schema - response']{
+    id uuid [pk]
+    kaizen_id uuid [ref: > k.id, not null]
+    parameter_type kaizen_parameter_type [not null, note: 'varchar - 30 chars. Value from kaizen_parameter_type enum.']
+    parameter_description varchar [not null, note: '256 chars']
+    created_on datetime [not null, default: `now()`]
+    created_by varchar [not null, note: '256 chars']
+    modified_on datetime [not null, default: `now()`]
+    modified_by varchar [not null, note: '256 chars']
+}
+
+//schema - response
+Table kaizen_performance_parameter_metric as kpm [note: 'schema - response']{
+    id uuid [pk]
+    kaizen_performance_parameter_id uuid [ref: > kp.id, not null]
+    metric kaizen_performance_metric [not null, note: 'varchar - 30 chars. Value from kaizen_performance_metric enum.']
+    performance_before varchar [not null, note: '256 chars']
+    performance_target varchar [not null, note: '256 chars']
+    performance_after varchar [not null, note: '256 chars']
+    created_on datetime [not null, default: `now()`]
+    created_by varchar [not null, note: '256 chars']
+    modified_on datetime [not null, default: `now()`]
+    modified_by varchar [not null, note: '256 chars']
+}
+
+//schema - response
+Table kaizen_analysis as ka [note: 'schema - response']{
+    id uuid [pk]
+    kaizen_id uuid [ref: > k.id, not null]
+    analysis_question_id uuid [ref: > kaq.id, not null]
+    response varchar [not null, note: '256 chars']
+    created_on datetime [not null, default: `now()`]
+    created_by varchar [not null, note: '256 chars']
+    modified_on datetime [not null, default: `now()`]
+    modified_by varchar [not null, note: '256 chars']
+}
+
+//schema - response
+Table kaizen_development_solution as kds [note: 'schema - response']{
+    id uuid [pk]
+    kaizen_id uuid [ref: > k.id, not null]
+    aspect varchar [not null, note: '256 chars']
+    root_cause varchar [null, note: '256 chars']
+    idea varchar [null, note: '256 chars']
+    improvement_action varchar [not null, note: '256 chars']
+    improvement_action_owner varchar [not null, note: '256 chars']
+    improvement_outcome varchar [not null, note: '256 chars']
+    created_on datetime [not null, default: `now()`]
+    created_by varchar [not null, note: '256 chars']
+    modified_on datetime [not null, default: `now()`]
+    modified_by varchar [not null, note: '256 chars']
+} 
+
+//schema - response
+Table kaizen_implementation_plan as kip [note: 'schema - response']{
+    id uuid [pk]
+    development_solution_id uuid [ref: > kds.id, not null]
+    target_date datetime
+    actual_date datetime
+    improvement_action varchar [not null, note: '256 chars']
+    improvement_solution varchar [not null, note: '256 chars']
+    created_on datetime [not null, default: `now()`]
+    created_by varchar [not null, note: '256 chars']
+    modified_on datetime [not null, default: `now()`]
+    modified_by varchar [not null, note: '256 chars']
+}
+
+//schema - response
+Table kaizen_key_outcome as ko [note: 'schema - response']{
+    id uuid [pk]
+    kaizen_id uuid [ref: > k.id, not null]
+    outcome varchar [not null, note: '256 chars']
+    outcome_type kaizen_outcome_type [not null, note: 'varchar - 30 chars. Value from outcome_type enum.']
+    created_on datetime [not null, default: `now()`]
+    created_by varchar [not null, note: '256 chars']
+    modified_on datetime [not null, default: `now()`]
+    modified_by varchar [not null, note: '256 chars']
+}
+
+
+TableGroup info {
+    kaizen_question
+    kaizen_analysis_question
+}
+
+TableGroup response {
+    kaizen
+    kaizen_performance_parameter
+    kaizen_analysis
+    kaizen_development_solution
+    kaizen_implementation_plan
+    kaizen_key_outcome
+}

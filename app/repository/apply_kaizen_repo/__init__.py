@@ -1,0 +1,1 @@
+from app.repository.apply_kaizen_repo.apply_kaizen import KaizenApplyRepo

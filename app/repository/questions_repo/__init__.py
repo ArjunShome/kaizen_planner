@@ -1,0 +1,2 @@
+from app.repository.questions_repo.kaizen_analysis_question import KaizenAnalysisQuestionRepo
+from app.repository.questions_repo.kaizen_questions import KaizenQuestionRepo

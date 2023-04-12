@@ -1,0 +1,31 @@
+id,question,analysis_type
+1fd8c744-d3ef-4879-b44e-dd58ae8f5435,What do you want to Improve?,how_how
+582774e7-66ab-4f6a-948a-72412747daf1,How will you Improve this?,how_how
+b4f7e03f-7c3e-4043-93e0-e2c493946588,How will you do this?,how_how
+6063892f-b337-458a-804b-ed3825a6c616,What do you want to Improve?,brainstorming
+ae6b598d-c80b-44a4-904f-c1c45a3a0349,How will you Improve this?,brainstorming
+12f3432a-a0b3-467c-8986-3898ef927c64,What is the idea to improve this?,brainstorming
+859e0833-00c1-4c34-8bb0-b0b9b2639d48,What do you want to Improve?,value_stream_mapping
+48ef9e99-c066-4515-b479-f04def8265ab,Identified Non value added steps and time,value_stream_mapping
+0f9bb016-aab2-4b02-a4cc-b5376cd50c65,How many steps and time can be reduced?,value_stream_mapping
+fa9b0b1f-ceaf-4780-a9c3-34ca02af3717,Identified value added steps and time,value_stream_mapping
+0b597c80-d724-41d7-8e11-f449c7141556,How many steps and time can be reduced?,value_stream_mapping
+5cea770c-82fc-422f-8ec6-dae4e76f087d,Identified Waste steps and time,value_stream_mapping
+59057139-a623-48fc-ba41-1c83dd128ab4,How many steps and time can be reduced?,value_stream_mapping
+e37740e1-6142-4b32-99ac-e4820086e8e0,Why do you want to address this problem?,5_why_analysis
+99c3d38c-9e92-4663-a2c2-966f22211e76,Why do you want to do that?,5_why_analysis
+8ca67ddd-9147-4494-bf3c-3e02a3228ab1,Why do you want to do that?,5_why_analysis
+b75ad0c3-f2d8-4c53-bd61-9a515e2161e4,Why do you want to do that?,5_why_analysis
+9db5aad2-beaf-40de-84d5-c7056a8a1323,Why do you want to do that?,5_why_analysis
+2960e935-a9d7-4f05-a7a4-7246a1626387,Why do you want to do that?,5_why_analysis
+8df5cc80-b142-4c52-8bb8-1bbdf1eda940,What is the problem that you want to address?,4m_method
+459015f1-e574-410d-88cd-c760ffa790a1,Man: Is skill the cause?Is Technology the cause?Is Organization the cause?Is Resources the cause?Any other - Please mention,4m_method
+10948644-e7b5-4306-a91e-be73f960ba6b,Machine: Is Equipment the cause? (Laptop breakdown/server problem etc) Any Other - Please mention,4m_method
+e291729a-ebd5-4ac5-9899-bfb0f7966b72,Method: Is process the cause Is schedule the cause? Is procedure the cause? Any other - Please mention,4m_method
+6798e33b-ccee-448d-8994-122ba7e5e95a,Material:  Is information (specifications) the cause? Is Quality the cause? Is Raw Material the cause? Is Consumables the cause? Any other - Please mention,4m_method
+5be1fc2f-e012-4df6-ace4-8a395a5bf6e8,What is the problem that you want to address?,cause_affect_analysis
+d84ed6d3-3e26-4f1f-adb0-800ab3b26dcd,Requirement Issue: 1. Inadequate Description 2.  Use Case not captured 3. Communication gap with development team,cause_affect_analysis
+9b9e4586-140b-41ad-afc3-0e014804f0ae,Coding Issue: 1. Not complaint with requirement document 2. Insufficient Unit test cases 3. Insufficient Skillset,cause_affect_analysis
+d1bef7a2-78b4-4bd7-9d90-b04d49c1299c,Testing Issue: 1. Defect raised due to interaction with another requirement 2. Requirement tested in wrong way 3. Test environment was incorrect,cause_affect_analysis
+d5662b1a-6b88-4cf8-8833-8784c3b94f8a,Environment Issue: 1. Documentation is not clear 2. Deployment issue 3. Unforseen issue,cause_affect_analysis
+9066c745-372f-414b-a29f-852aa8b7ca55,Environment: Is noise the problem? Is lighting the problem? Is ventilation the problem? Is temperature the problem? Is workplace design the problem? Is cleanliness the problem? Any other - Please mention,cause_affect_analysis
